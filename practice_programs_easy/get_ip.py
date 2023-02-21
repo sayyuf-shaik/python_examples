@@ -15,3 +15,4 @@ pattern = "[a-zA-Z0-9-. ]+:[a-z0-9%]{0,4}?:[a-z0-9%]{0,4}?:[a-z0-9%]{0,4}?:[a-z0
 matches = re.findall(pattern, stdout.decode())
 
 print(matches)
+
