@@ -7,7 +7,7 @@ Example:
     id(a) and id(b) both will have same reference as both are pointing to the same object i.e "5"
 
 A Shallow copy will copy the top level structure and retains the low level child objects references. which means nested
-childs such as nested lists inside list will be referenced rather copied independently.
+children such as nested lists inside list will be referenced rather copied independently.
 """
 
 # Shallow copy
@@ -53,7 +53,7 @@ print(list_2)
 # The value will not get reflected in both the lists
 print(list_1)
 
-# Note: only nested objects Or child objects references will be retained where as the parent objects will be created
+# Note: only nested objects Or child objects references will be retained whereas the parent objects will be created
 # independently
 
 # change the value of the parent object
