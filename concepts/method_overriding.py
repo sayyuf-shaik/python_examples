@@ -13,15 +13,14 @@ class Parent:
         print(self.name)
 
 
-class Child:
+class Child(Parent):
     def __init__(self):
+        super().__init__()
         self.name = "child class"
 
     def method(self):
         print(self.name)
 
 
-obj1 = Parent()
 obj2 = Child()
-obj1.method()
 obj2.method()

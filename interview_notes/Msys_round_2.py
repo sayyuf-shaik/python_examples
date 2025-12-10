@@ -23,11 +23,11 @@ for i in range(len(integer_list)):
 
 print(integer_list)
 
-# Reverse a string without changing the index positions of the special characters .
+    # Reverse a string without changing the index positions of the special characters .
 
-# I/p : Ab%c&de!$
+    # I/p : Ab%c&de!$
 
-# o/p : ed%c&bA!$
+    # o/p : ed%c&bA!$
 
 string = "Ab%c&de!$"
 
@@ -78,7 +78,7 @@ def flatten(data):
     for ele in data:
         if isinstance(ele, list):
             yield from flatten(ele)
-            # yield from will divides the task among the generators
+            # yield from will divide the task among the generators
         else:
             yield ele
 

@@ -17,24 +17,37 @@ Output: Not Balanced
 # if top of the stack and current element to be pushed is same then, the list does not have balanced parenthis
 # else balanced
 # Approach 1:
-string = '[()]{}{[()()]()}'
-map_paren = {
-    '(': ')',
-    '[': ']',
-    '{': '}'
-}
-# Step1: let us create a stack for the string
-stack = []
-# Step2: loop through the string and start pushing the element to stack
-for item in string:
-    if item in map_paren.keys():
-        stack.append(item)
-    else:
-        for key, value in map_paren.items():
-            if item == value and key == stack[-1]:
-                stack.pop()
-print(stack)
-if len(stack) == 0:
+# string = '[()]{}{[())]()}'
+
+string = ')'
+
+def check_balence(string):
+    map_paren = {
+        '(': ')',
+        '[': ']',
+        '{': '}'
+    }
+    # Step1: let us create a stack for the string
+    stack = [] # [ '[',  ]
+    # Step2: loop through the string and start pushing the element to stack
+    for item in string:
+        if item in map_paren.keys():
+            stack.append(item)
+        else:
+            # stack might be empty if string has only closing brackets
+            if not stack:
+                return False
+            for key, value in map_paren.items():
+                if item == value and key == stack[-1]:
+                    stack.pop()
+                    break
+
+            if len(stack) == 0:
+                return True
+            return False
+
+
+if check_balence(string):
     print('Balanced')
 else:
     print('Not balanced')

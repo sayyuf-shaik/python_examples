@@ -28,10 +28,10 @@ If not then Method from A class would be called.
 """
 
 
-class C(B, A):
+class C(A, B):
     def __init__(self):
         super().__init__()
-        self.name = "class A"
+        self.name = "class C"
 
     def c_method(self):
         print('Im method inside a class A')

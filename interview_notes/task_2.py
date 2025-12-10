@@ -21,12 +21,19 @@ input_string = "yuyuy"
 
 def get_non_repeating_character(input_string):
     # check for lowercase letters
+    frequent = dict()
     if input_string.islower():
-        for char in input_string:
-            if input_string.count(char) == 1:
-                return char
-        return None
+        for char in set(input_string):
+            frequent[char] = input_string.count(char)
+    # print(frequent)
+    frequent_list = []
+    max_occurence = max(frequent.values())
+    for key, value in frequent.items():
+        if value >= max_occurence:
+            # print(key, value)
+            frequent_list.append(key)
 
+    return frequent_list
 
 print(get_non_repeating_character("abcabcxabc"))
 print(get_non_repeating_character("t"))
